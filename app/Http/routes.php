@@ -22,5 +22,6 @@ Route::any('/logout', 'MainController@logout');
 //rutas con filtro de autenticación
 Route::group(['middleware' => ['web']], function () {
 	Route::get('/welcome', 'MainController@welcome');
+	Route::any('/Formulario/', 'ContratosController@index');
 });
 /*

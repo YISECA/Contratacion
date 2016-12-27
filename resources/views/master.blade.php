@@ -15,7 +15,12 @@
           <link href="https://fonts.googleapis.com/css?family=Lato:100" rel="stylesheet" type="text/css">
           <link rel="stylesheet" href="{{ asset('public/Css/jquery-ui.css') }}" media="screen">    
           <link rel="stylesheet" href="{{ asset('public/Css/bootstrap.min.css') }}" media="screen">    
-          <link rel="stylesheet" href="{{ asset('public/Css/sticky-footer.css') }}" media="screen">    
+          <link rel="stylesheet" href="{{ asset('public/Css/sticky-footer.css') }}" media="screen"> 
+
+          <link rel="shortcut icon" href="{{ asset('public/Img/Institucionales/iconoModulo.png') }}">  
+          <link rel="stylesheet" href="{{ asset('public/Css/css_datatable/jquery.dataTables.min.css') }}" media="screen">
+          <link rel="stylesheet" href="{{ asset('public/Css/css_datatable/buttons.dataTables.min.css') }}" media="screen"> 
+          <link rel="stylesheet" href="https://cdn.datatables.net/responsive/2.0.1/css/responsive.bootstrap.min.css">   
       @show
 
       @section('script')
@@ -23,9 +28,19 @@
           <script src="{{ asset('public/Js/jquery-ui.js') }}"></script>
           <script src="{{ asset('public/Js/bootstrap.min.js') }}"></script>
           <script src="{{ asset('public/Js/main.js') }}"></script>
+
+          <script src="{{ asset('public/Js/js_datatable/jquery.dataTables.min.js') }}"></script>
+          <script src="{{ asset('public/Js/js_datatable/dataTables.buttons.min.js') }}"></script>
+          <script src="{{ asset('public/Js/js_datatable/jszip.min.js') }}"></script>
+          <script type="text/javascript" language="javascript" src="//cdn.rawgit.com/bpampuch/pdfmake/0.1.18/build/pdfmake.min.js"></script>
+          <script src="{{ asset('public/Js/js_datatable/vfs_fonts.js') }}"></script>
+          <script src="{{ asset('public/Js/js_datatable/buttons.html5.min.js') }}"></script>  
+          <script src=" https://cdn.datatables.net/responsive/2.0.1/js/dataTables.responsive.min.js"></script>
+          <script src=" https://cdn.datatables.net/responsive/2.0.1/js/responsive.bootstrap.min.js"></script> 
       @show
 
-      <title>Nombre Módulo</title>
+      <title>Módulo Certificados de Contratos</title>
+    
   </head>
 
   <body>
@@ -44,17 +59,12 @@
           <div class="navbar-collapse collapse" id="navbar-main">
             <ul class="nav navbar-nav">
               <li class="dropdown">
-                <a class="dropdown-toggle" data-toggle="dropdown" href="#" id="themes">Opción 1 <span class="caret"></span></a>
+                <a class="dropdown-toggle" data-toggle="dropdown" href="#" id="themes">Registro<span class="caret"></span></a>
                 <ul class="dropdown-menu" aria-labelledby="themes">
-                  <li><a href="#">Default</a></li>
-                  <li class="divider"></li>
-                  <li><a href="#">Sub-Item 1</a></li>
-                  <li><a href="#">Sub-Item 2</a></li>
-                  <li><a href="#">Sub-Item 3</a></li>
-                  <li><a href="#">Sub-Item 4</a></li>
+                  <li class=”{{ Request::is( 'Formulario') ? 'active' : '' }}”><a href="{{ URL::to( 'Formulario') }}">Contratos</a></li>
                 </ul>
               </li>
-              <li>
+              <!--<li>
                 <a href="#">Opción 2</a>
               </li>
               <li class="dropdown">
@@ -67,7 +77,7 @@
                   <li><a href="#">Sub-Item 3</a></li>
                   <li><a href="#">Sub-Item 4</a></li>
                 </ul>
-              </li>
+              </li>-->
             </ul>
 
             <form class="navbar-form navbar-left" role="search">
@@ -93,8 +103,8 @@
           <div class="page-header" id="banner">
             <div class="row">
               <div class="col-lg-8 col-md-7 col-sm-6">
-                <h1>MÓDULO</h1>
-                <p class="lead"><h1>##### ### ### ####</h1></p>
+                <h1>Módulo</h1>
+                <p class="lead"><h1>Certificados para Contratistas</h1></p>
               </div>
               <div class="col-lg-4 col-md-5 col-sm-6">
                  <div align="right"> 
